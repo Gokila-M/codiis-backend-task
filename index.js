@@ -10,14 +10,20 @@ import multer from "multer";
 import Plan from "./routes/plan.js";
 
 
-// const encrypt=require('mongoose-encryption')
+
+// "email":"gokila1305@gmail.com", admin email
+//     "password":"gokila123456"   admin password
 
 
 const app = express();
 
 mongoose.connect('mongodb+srv://vasanthakumar8017:1234@cluster0.qjnmkan.mongodb.net/?retryWrites=true&w=majority')
-.then(()=>console.log('db connected as bank'))
+.then(()=>console.log('database connected to cluster'))
 .catch((e)=>console.log('error'))
+
+// mongoose.connect('mongodb://localhost/cstreamingapp')
+//   .then(() => console.log('Connected to MongoDB...'))
+//   .catch(err => console.error('Could not connect to MongoDB...'));
 
 app.use(express.json());
 app.use(cors());
@@ -26,9 +32,6 @@ app.use(cors());
  app.use('/api/admin',admin);
  app.use('/api',login);
  app.use('/api/plan',Plan)
-
-
-
 
 
 
